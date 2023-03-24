@@ -5,9 +5,15 @@ export class Walcome extends React.Component {
     return (
       <>
         <h1>Welcome {this.props.name}</h1>
-        <p>Your age is {this.props.age}</p>
+        <Age age={this.props.age} />
       </>
     );
+  }
+}
+
+export class Age extends React.Component {
+  render() {
+    return <p>Your age is {this.props.age}</p>;
   }
 }
 
