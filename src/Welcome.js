@@ -9,3 +9,7 @@ export class Walcome extends React.Component{
         )
     }
 }
+
+Walcome.defaultProps = {
+    name: "Sara",
+}

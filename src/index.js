@@ -7,12 +7,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 root.render(
-    <Name name="Giovanni"/>
+    <Name />
 )
 
 
 export function Name(props){
     return(
-        <h1>Walcome {props.name}</h1>
+        <h1>Walcome {props.name ?? "francesco"}</h1>
     )
 }
