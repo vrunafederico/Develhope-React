@@ -5,8 +5,8 @@ export class Walcome extends React.Component {
     return (
       <>
         <h1>Welcome {this.props.name}</h1>
-        {this.props.age > 18 && this.props.age < 65 && this.props.name === "john" &&(
-          <Age age={this.props.age} />
+        {this.props.age < 65 && this.props.name === "john" &&(
+          <Age age={this.props.age}/>
         )}
       </>
     );
@@ -15,7 +15,7 @@ export class Walcome extends React.Component {
 
 export class Age extends React.Component {
   render() {
-    return <p>Your age is {this.props.age}</p>;
+    return (this.props.age > 18 ? <p>Your age is {this.props.age}</p> : <p>Sei molto giovane!</p>)
   }
 }
 
