@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 
-root.render(<Name age={45} />);
+root.render(<Name name={<strong>giulio</strong>} age={45}/>);
 
 export function Name(props) {
   return (
