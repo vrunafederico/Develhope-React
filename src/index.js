@@ -4,17 +4,17 @@ import ReactDOM from "react-dom";
 ReactDOM.render(<App />, document.getElementById("app"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Name name={<strong>giulio</strong>} age={15} />);
+root.render(<Name name={<strong>giulio</strong>} />);
 
 export function Name(props) {
   return (
     <>
       <h1>Walcome {props.name ?? "francesco"}</h1>
-      {props.age > 18 && <Age age={props.age}/>}
+      {props.age && <Age2 age={props.age}/>}
     </>
   );
 }
 
-export function Age(props) {
+export function Age2(props) {
   return <p>Your age is {props.age}</p>;
 }
