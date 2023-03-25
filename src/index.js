@@ -17,6 +17,6 @@ export function Name(props) {
 
 export function Age2(props) {
   return( 
-    props.age > 18 ? <p>Your age is {props.age}</p> : <p>Sei molto giovane!</p>
+    props.age > 18 ? <p>Your age is {props.age}</p> : <p>You are very young!!</p>
     )
 }
