@@ -1,4 +1,5 @@
+import { render } from "@testing-library/react";
 import React from "react";
-import { ReactDOM } from "react-dom";
+import { Counter } from "./Counter";
 
-const root = ReactDOM.createRoot()
+React.render(<Counter />, document.getElementById("Root"))
