@@ -3,41 +3,41 @@ import { Counter } from "./Counter";
 import  ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom'
 
-ReactDOM.render(<Counter />, document.getElementById("Root"));
+ReactDOM.render(<Counter initalValue={0} increment={2} interval={1000}/>, document.getElementById("Root"));
 const Root = createRoot(document.getElementById("App"));
 
 Root.render(
     <>
-        <Counter2 />
-        <Counter3 />
+        <Counter2 initalValue={0} increment={2} interval={1000}/>
+        <Counter3 initalValue={10} increment={1} interval={2000}/>
     </> 
     
 )
 
 
-export function Counter2(){
-    let [count, setCount] = useState(0);
+export function Counter2(props){
+    let [count, setCount] = useState(props.initalValue);
 
     setInterval(()=>{
         setCount(() => {
-            return count = count + 1
+            return count = count + props.increment
         })
-    },1000)
+    },props.interval)
 
     return (
         <h1>{count}</h1>
     )
 }
 
-export function Counter3(){
-    const [count, setCount] = useState(0);
+export function Counter3(props){
+    const [count, setCount] = useState(props.initalValue);
 
     useEffect(()=>{
         setTimeout(()=>{
             setCount(() => {
-                return count + 1
+                return count + props.increment
             })
-        },1000)
+        },props.interval)
     })
 
     return (
