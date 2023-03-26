@@ -25,7 +25,7 @@ export function Counter2(props){
     },props.interval)
 
     return (
-        <h1>{count}</h1>
+        <CounterDisplay count={count}/>
     )
 }
 
@@ -41,6 +41,12 @@ export function Counter3(props){
     })
 
     return (
-        <h1>{count}</h1>
+        <CounterDisplay count={count}/>
+    )   
+}
+
+export function CounterDisplay(props){
+    return(
+        <h1>{props.count}</h1>
     )
 }
