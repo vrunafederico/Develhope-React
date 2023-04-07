@@ -1,6 +1,6 @@
 import { App } from "./App";
 import ReactDOM  from "react-dom";
-import { render } from "@testing-library/react";
+import React, { useState } from 'react';
 
 ReactDOM.render(<App />, document.getElementById("app"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -11,8 +11,19 @@ root.render(
 )
 
 
-export function Name(props){
+export function Name(){
+    const [name, setName] = useState("");
+
+    const handleClick = (e) =>{
+        setName(e.target.name)
+    }
+
     return(
-        <h1>Walcome {props.name}</h1>
+        <div>
+            <h1>{name}</h1>
+            <button name="pulsante 1" onClick={handleClick}>pulsante 1</button>
+            <button name="pulsante 2" onClick={handleClick}>pulsante 2</button>
+            <button name="pulsante 3" onClick={handleClick}>pulsante 3</button>
+        </div>
     )
 }
