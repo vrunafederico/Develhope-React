@@ -1,10 +1,10 @@
 import React from "react";
-import { Walcome } from "./Welcome";
+import { TodoList} from "./TodoList";
 
 export class App extends React.Component{
     render(){
         return(
-            <Walcome name="francesco" />
+            <TodoList></TodoList>
         )
     }
 }
