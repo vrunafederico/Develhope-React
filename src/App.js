@@ -1,10 +1,14 @@
 import React from "react";
-import { Walcome } from "./Welcome";
+import { Login } from "./Login";
 
 export class App extends React.Component{
+    onlogin = (name) =>{
+        console.log(name)
+    }
+
     render(){
         return(
-            <Walcome name="francesco" />
+            <Login onLogin={this.onlogin}></Login>
         )
     }
 }
