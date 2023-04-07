@@ -1,16 +1,17 @@
 import React from "react";
 import { LanguageContext } from "./LanguageContext";
+import { Language } from "./Language";
 
 export class App extends React.Component {
     state = {
         language: "en",
     };
 
-    handleLanguageChange = (e) =>{
+    handleLanguageChange = (e) => {
         this.setState({
-            language: e.target.value
-        })
-    }
+            language: e.target.value,
+        });
+    };
 
     render() {
         return (
@@ -22,7 +23,7 @@ export class App extends React.Component {
                     <option value="da">tedesco</option>
                 </select>
                 <LanguageContext.Provider value={this.state.language}>
-       
+                    <Language />
                 </LanguageContext.Provider>
             </div>
         );
