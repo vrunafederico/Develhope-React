@@ -26,13 +26,25 @@ export class TodoList extends React.Component{
             todo: ""
         })
     }
+    
+    handleDone = (e) =>{
+        this.setState({
+            Todo: this.state.Todo.filter(el => el !== e.target.name)
+        })
+    }
 
     render(){
         return (
             <div>
-                <ul>
-                    {
-                        this.state.Todo.map((el) => <li>{el}</li>)
+                <ul>{
+                    this.state.Todo.map((el) =>{
+                        return( 
+                                <li>
+                                    <span>{el}</span>
+                                    <button name={el} onClick={this.handleDone}> Remove</button>
+                                </li>
+                            )
+                        })
                     }
                 </ul>
                 
