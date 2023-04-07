@@ -20,6 +20,13 @@ export class TodoList extends React.Component{
         
     }
 
+    handleReset = () =>{
+        this.setState({
+            Todo: [],
+            todo: ""
+        })
+    }
+
     render(){
         return (
             <div>
@@ -29,8 +36,9 @@ export class TodoList extends React.Component{
                     }
                 </ul>
                 
-                <input onChange={this.handleChange} value={this.state.todo}name="Todo"></input>
+                <input onChange={this.handleChange} value={this.state.todo} name="Todo"></input>
                 <button disabled = {!this.state.todo} onClick={this.handleClick}>Add</button>
+                <button onClick={this.handleReset}>Reset</button>
             </div>
         )
     }
