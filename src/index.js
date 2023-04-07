@@ -1,18 +1,21 @@
 import { App } from "./App";
 import ReactDOM  from "react-dom";
-import { render } from "@testing-library/react";
 
-ReactDOM.render(<App />, document.getElementById("app"));
+import { ClickCounter2 } from "./ClickCounter";
+
+// ReactDOM.render(<App />, document.getElementById("app"));
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 root.render(
-    <Name name="Giovanni"/>
+    <App />
 )
 
+const root2 = ReactDOM.createRoot(document.getElementById("app"));
 
-export function Name(props){
-    return(
-        <h1>Walcome {props.name}</h1>
-    )
-}
+
+root2.render(
+    <ClickCounter2 />
+)
+
