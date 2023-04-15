@@ -12,4 +12,3 @@ export class Language extends React.Component {
         );
     }
 }
-
