@@ -8,17 +8,17 @@ export function GithubUser({username}){
         fetch(`https://api.github.com/users/${username}`)
             .then(responce => responce.json())
             .then(result => setData(result))
+            .catch(error => console.log(error))
     },[username])
 
     console.log(data)
 
     return(
-        data && 
-                <div style={{display:"flex", flexDirection:"column"}}>
-                    <span>{data.avatar_url}</span>
-                    <span>{data.id}</span>
-                    <span>{data.login}</span>
-                    <span>{data.type}</span>
-                </div>
+        data && <div style={{display:"flex", flexDirection:"column"}}>
+            <span>{data.avatar_url}</span>
+            <span>{data.id}</span>
+            <span>{data.login}</span>
+            <span>{data.type}</span>
+        </div>
     )
 }
