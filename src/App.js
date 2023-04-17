@@ -1,8 +1,8 @@
 import React from "react";
-import { ClickCounter } from "./ClickCounter";
+import { Form } from "./Form";
 
 export function App(){
     return(
-        <ClickCounter />
+        <Form />
     )
 }
