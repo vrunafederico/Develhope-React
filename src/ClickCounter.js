@@ -1,19 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useCounter } from "./useCounter";
 
 
 export function ClickCounter(){
-    
-    const [count, setCount] = useState(0);
-
-    const handleCount = () =>{
-        setCount(count+1)
-    }
+   const {counter, onIncrement, onDecrement, onReset} = useCounter(10)
 
     return(
         <div>
-            <div>Count: {count}</div>
-            <button onClick={handleCount}>increment</button>
+            <div>Count: {counter}</div>
+            <button onClick={onIncrement}>increment</button>
+            <button onClick={onDecrement}>Decrement</button>
+            <button onClick={onReset}>Reset</button>
         </div>
     );   
 }
