@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function useGithubUser(username) {
     const [data, setData] = useState();
@@ -20,8 +20,8 @@ export function useGithubUser(username) {
 
     return {
         onSearch: search,
-        data: data,
-        error: error,
-        loading: loading,
+        data,
+        error,
+        loading,
     };
 }

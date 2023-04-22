@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
+import {useParams} from "react-router-dom"
 
-export function GithubUser({username}){
+export function GithubUser(){
+    const {username} = useParams();
+
     const {onSearch, data, error, loading} = useGithubUser(username)
 
     useEffect(()=>{
