@@ -1,10 +1,10 @@
 
-import ReactDOM  from "react-dom";
-import { Counter } from "./Counter";
+import ReactDOM  from "react-dom/client";
+import { App } from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("App"));
 
 root.render(
-    <Counter initalValue={0} increment={1} interval={1000}/>
+    <App />
 )
 
