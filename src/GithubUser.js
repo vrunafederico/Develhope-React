@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
 import {useParams} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 export function GithubUser(){
     const {username} = useParams();
@@ -21,6 +22,7 @@ export function GithubUser(){
                 <span>{data.login}</span>
                 <span>{data.type}</span>
             </div>}
+            <Link to="/">Home</Link>
         </>
     )
 }

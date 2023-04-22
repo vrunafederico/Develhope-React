@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 export function Home() {
   const [name, setName] = useState("");
@@ -13,6 +13,7 @@ export function Home() {
     <>
       <input value={name} onChange={handleChange}></input>
       <button onClick={() => navigate(`/users/${name}`)}>Search</button>
+      <Link to="counter">Counter</Link>
     </>
   );
 }
