@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link, Outlet, useNavigate} from "react-router-dom"
+import {Link, Navigate, Outlet, useNavigate} from "react-router-dom"
 
 
 export function GithubUserList() {
@@ -9,7 +9,7 @@ export function GithubUserList() {
     const handleChange = (e) => {
       setName(e.target.value);
     };
-  
+    
     return (
       <>
         <input value={name} onChange={handleChange}></input>
