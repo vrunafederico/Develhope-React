@@ -3,6 +3,7 @@ import { GithubUser } from "./GithubUser";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Home";
 import {Counter} from "./Counter"
+import { NotFound } from "./NotFound";
 
 
 export function App(){
@@ -13,6 +14,7 @@ export function App(){
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/users/:username" element={<GithubUser />}></Route>
                 <Route path="/counter" element={<Counter />}></Route>
+                <Route path="*" element={<NotFound />}></Route>
             </Routes>
         </BrowserRouter>
       
