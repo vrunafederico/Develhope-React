@@ -22,7 +22,6 @@ export function GithubUser(){
                 <span>{data.login}</span>
                 <span>{data.type}</span>
             </div>}
-            <Link to="/">Home</Link>
         </>
     )
 }
