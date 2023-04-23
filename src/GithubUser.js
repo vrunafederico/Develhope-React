@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
 
 export function GithubUser({username}){
-    const {onSearch, data, error, loading} = useGithubUser(username)
+    const {data, error, loading} = useGithubUser(username)
 
-    useEffect(()=>{
-        onSearch(username)
-    },[])
-        
     return(
         <>
             {error && <div>{error}</div>}
