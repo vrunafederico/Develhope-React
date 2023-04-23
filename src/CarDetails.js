@@ -2,28 +2,32 @@ import React from "react";
 import { useRef } from "react";
 
 export function CarDetails(props) {
-  const initialValue = useRef({
-    model: props.model,
-    color: props.color,
-    year: props.year,
-  });
 
-  console.log(initialValue);
+  const text = useRef()
+  const text2 = useRef()
+  const text3 = useRef()
 
-  const handleChange = (e) => {
 
-    e.preventDefault();
-    console.log(initialValue);
+  
+
+  const submitHandler = () => {
+    console.log(text.current.value)
+    props.model = text.current.value
+    props.color= text2.current.value
+    props.year= text3.current.value
+  
+
+    
   };
 
+  console.log(props)
+
   return (
-    <form>
-      <input
-        ref={initialValue.current.model}
-        onChange={handleChange}
-      ></input>
-      <input value={initialValue.current.color} onChange={handleChange}></input>
-      <input value={initialValue.current.year} onChange={handleChange}></input>
+    <form onSubmit={submitHandler}>
+      <input type="text" ref={text} ></input>
+      <input type="text" ref={text2} ></input>
+      <input type="text" ref={text3} ></input>
+      <button>Add Meetup</button>
     </form>
   );
 }
