@@ -1,33 +1,23 @@
-import React from "react";
+import { useEffect } from "react";
 import { useRef } from "react";
 
-export function CarDetails(props) {
+export function CarDetails({initialData}) {
 
-  const text = useRef()
-  const text2 = useRef()
-  const text3 = useRef()
+  const model = useRef(null);
+  const year = useRef(null);
+  const color = useRef(null);
 
+   useEffect(() => {
+      model.current.value = initialData.model;
+      year.current.value = initialData.year;
+      color.current.value = initialData.color;
+  }, [initialData])
 
-  
-
-  const submitHandler = () => {
-    console.log(text.current.value)
-    props.model = text.current.value
-    props.color= text2.current.value
-    props.year= text3.current.value
-  
-
-    
-  };
-
-  console.log(props)
-
-  return (
-    <form onSubmit={submitHandler}>
-      <input type="text" ref={text} ></input>
-      <input type="text" ref={text2} ></input>
-      <input type="text" ref={text3} ></input>
-      <button>Add Meetup</button>
-    </form>
-  );
+    return (
+        <form>
+            <input ref={model} type="text" name="model"></input>
+            <input ref={year} type="year" name="year"></input>
+            <input ref={color} type="text" name="color"></input>
+        </form>
+    )
 }
