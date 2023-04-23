@@ -5,6 +5,7 @@ export function GithubUser({username}){
 
     return(
         <>
+            {!data && !loading && !error && <div>Not found</div>} 
             {error && <div>{error}</div>}
             {loading && <div>loading</div>}
             {data && <div style={{display:"flex", flexDirection:"column"}}>
