@@ -1,7 +1,7 @@
 import { useGithubUser } from "./useGithubUser";
 
 export function GithubUser({username}){
-    const {data, error, loading} = useGithubUser(username)
+    const {data, error, loading, reload} = useGithubUser(username)
 
     return(
         <>
@@ -14,6 +14,7 @@ export function GithubUser({username}){
                 <span>{data.login}</span>
                 <span>{data.type}</span>
             </div>}
+            <button onClick={reload}>Reload</button>
         </>
     )
 }
